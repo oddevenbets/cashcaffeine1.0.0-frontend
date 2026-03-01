@@ -6,8 +6,8 @@ import {
   onAuthStateChanged
 } from "./auth";
 
-// 🔥 Change this to your Render backend URL when deploying
-const API_BASE = "http://localhost:5000";
+// 🔥 LIVE BACKEND (Render)
+const API_BASE = "https://cashcaffeine1-0-0-backend.onrender.com";
 
 document.querySelector("#app").innerHTML = `
   <div style="max-width:900px;margin:auto;padding:40px;">
@@ -91,7 +91,7 @@ async function loadCPXWall(user) {
       `&email=${encodeURIComponent(user.email)}`;
 
     const wall = document.getElementById("offerwall");
-    wall.innerHTML = ""; // Prevent duplicates
+    wall.innerHTML = "";
     wall.appendChild(iframe);
   } catch (err) {
     console.error("Failed to load CPX wall:", err);
